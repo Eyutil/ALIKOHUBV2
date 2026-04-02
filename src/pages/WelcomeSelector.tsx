@@ -2,8 +2,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, Heart, ArrowRight } from "lucide-react";
-import logoProfessional from "@/assets/logo-professional.png";
-import logoSocial from "@/assets/logo-social.png";
+import logoMain from "@/assets/logo-main-white.png";
 
 const VIDEOS = [
   "/videos/welcome-bg.mp4",
@@ -47,7 +46,7 @@ const WelcomeSelector = () => {
       if (!v) return;
       if (i === activeIndex) {
         v.currentTime = 0;
-        v.play().catch(() => {});
+        v.play().catch(() => { });
       } else {
         v.pause();
       }
@@ -136,7 +135,7 @@ const WelcomeSelector = () => {
             className="group relative overflow-hidden rounded-2xl border border-primary-foreground/8 hover:border-teal/30 bg-[hsl(152,30%,6%)]/80 backdrop-blur-xl transition-all duration-300 cursor-pointer flex flex-col text-left shadow-[0_0_60px_-15px_hsla(152,45%,18%,0.15)]"
           >
             <div className="flex-1 flex items-center justify-center p-8 min-h-[220px]">
-              <img src={logoProfessional} alt="Aliko Events Professional" className="max-h-40 w-auto object-contain" />
+              <img src={logoMain} alt="Aliko Events Professional" className="max-h-48 w-auto object-contain" />
             </div>
             <div className="border-t border-primary-foreground/5 bg-[hsl(152,30%,4%)]/90">
               <div className="p-6 lg:p-8">
@@ -174,7 +173,7 @@ const WelcomeSelector = () => {
             className="group relative overflow-hidden rounded-2xl border border-primary-foreground/8 hover:border-rose/30 bg-[hsl(152,30%,6%)]/80 backdrop-blur-xl transition-all duration-300 cursor-pointer flex flex-col text-left shadow-[0_0_60px_-15px_hsla(340,65%,55%,0.1)]"
           >
             <div className="flex-1 flex items-center justify-center p-8 min-h-[220px]">
-              <img src={logoSocial} alt="Aliko Events Social" className="max-h-40 w-auto object-contain" />
+              <img src={logoMain} alt="Aliko Events Social" className="max-h-48 w-auto object-contain" />
             </div>
             <div className="border-t border-primary-foreground/5 bg-[hsl(152,30%,4%)]/90">
               <div className="p-6 lg:p-8">
@@ -233,9 +232,8 @@ const WelcomeSelector = () => {
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
-                i === activeIndex ? "bg-accent w-4" : "bg-primary-foreground/20 hover:bg-primary-foreground/40"
-              }`}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${i === activeIndex ? "bg-accent w-4" : "bg-primary-foreground/20 hover:bg-primary-foreground/40"
+                }`}
             />
           ))}
         </div>

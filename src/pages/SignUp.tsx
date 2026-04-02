@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import logoMain from "@/assets/logo-main-black.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -44,7 +45,9 @@ const SignUp = () => {
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link to="/" className="text-2xl font-bold text-primary font-display">Aliko Events</Link>
+          <Link to="/" className="inline-block">
+            <img src={logoMain} alt="Aliko Events" className="h-20 w-auto" />
+          </Link>
           <p className="text-muted-foreground font-body mt-2">Create your account</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4 bg-card p-8 rounded-xl border border-border shadow-card">

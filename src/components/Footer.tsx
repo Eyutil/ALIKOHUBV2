@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoMain from "@/assets/logo-main-white.png";
 
 interface FooterProps {
   portal: "professional" | "social";
@@ -27,7 +28,11 @@ const Footer = ({ portal }: FooterProps) => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-display text-lg font-semibold mb-2">Aliko Events</h3>
+            <Link to={`/${portal}`} className="inline-block mb-6">
+              <img src={logoMain} alt="Aliko Events" className="h-20 w-auto" />
+            </Link>
+            <h3 className="sr-only">Aliko Events</h3>
+            <div className="h-0.5 w-12 bg-gold mb-4" />
             <p className="text-sm text-primary-foreground/70 font-body leading-relaxed mb-2">
               Professional precision. Personal celebration.
             </p>

@@ -3,8 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LayoutDashboard, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import logoProfessional from "@/assets/logo-professional.png";
-import logoSocial from "@/assets/logo-social.png";
+import logoMain from "@/assets/logo-main-white.png";
 
 interface NavItem {
   label: string;
@@ -34,15 +33,15 @@ const Navbar = ({ portal }: NavbarProps) => {
   const { user, isAdmin, isContentManager, signOut } = useAuth();
   const location = useLocation();
   const links = portal === "professional" ? professionalLinks : socialLinks;
-  const logo = portal === "professional" ? logoProfessional : logoSocial;
+  const logo = logoMain;
   const ctaText = portal === "professional" ? "Request Proposal" : "Book Consultation";
   const ctaHref = portal === "professional" ? "/professional/request-proposal" : "/social/book-consultation";
 
   return (
     <nav className="sticky top-0 z-40 bg-primary border-b border-primary/80 shadow-md">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
+      <div className="container mx-auto flex items-center justify-between h-20 px-4">
         <Link to={`/${portal}`} className="flex items-center gap-2">
-          <img src={logo} alt={`Aliko Events ${portal}`} className="h-9 w-auto" />
+          <img src={logo} alt={`Aliko Events ${portal}`} className="h-14 w-auto" />
         </Link>
 
         {/* Desktop links */}
@@ -51,11 +50,10 @@ const Navbar = ({ portal }: NavbarProps) => {
             <Link
               key={l.href}
               to={l.href}
-              className={`transition-colors hover:text-accent ${
-                location.pathname === l.href
+              className={`transition-colors hover:text-accent ${location.pathname === l.href
                   ? "text-accent font-semibold"
                   : "text-primary-foreground/80"
-              }`}
+                }`}
             >
               {l.label}
             </Link>
@@ -73,9 +71,9 @@ const Navbar = ({ portal }: NavbarProps) => {
 
         <div className="hidden lg:flex items-center gap-3">
           {user ? (
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={signOut}
               className="font-body text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground flex items-center gap-2"
             >
@@ -134,9 +132,9 @@ const Navbar = ({ portal }: NavbarProps) => {
           )}
           <div className="pt-2 flex flex-col gap-2">
             {user ? (
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 onClick={() => { setOpen(false); signOut(); }}
                 className="w-full font-body border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 flex items-center justify-center gap-2"
               >

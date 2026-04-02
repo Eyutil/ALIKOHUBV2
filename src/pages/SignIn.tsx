@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logoMain from "@/assets/logo-main-white.png";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,7 +53,7 @@ const SignIn = () => {
     <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-green-light to-primary" />
-      
+
       {/* Floating orbs */}
       <motion.div
         className="absolute top-[10%] left-[15%] w-72 h-72 rounded-full opacity-20"
@@ -96,13 +97,8 @@ const SignIn = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <Link to="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-primary" />
-            </div>
-            <span className="text-2xl font-bold text-primary-foreground font-display tracking-wide">
-              Aliko Events
-            </span>
+          <Link to="/" className="inline-block">
+            <img src={logoMain} alt="Aliko Events" className="h-24 w-auto drop-shadow-2xl" />
           </Link>
           <p className="text-primary-foreground/70 font-body mt-3 text-sm">
             Welcome back — sign in to manage your events
