@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/Aliko Events I - tbg (H).png";
 
 interface FooterProps {
   portal: "professional" | "social";
@@ -23,11 +24,13 @@ const Footer = ({ portal }: FooterProps) => {
       ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-[#2d7653] text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-display text-lg font-semibold mb-2">Aliko Events</h3>
+            <div className="mb-4">
+              <img src={logo} alt="Aliko Events" className="h-12 w-auto object-contain" />
+            </div>
             <p className="text-sm text-primary-foreground/70 font-body leading-relaxed mb-2">
               Professional precision. Personal celebration.
             </p>

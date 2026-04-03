@@ -257,6 +257,7 @@ const AdminEvents = () => {
               <Input value={form.externalLink || ""} onChange={(e) => setForm({ ...form, externalLink: e.target.value })} className="rounded-xl font-body" placeholder="https://..." />
             </div>
 
+
             <div className="space-y-1.5">
               <Label className="font-body text-xs">Cover Image</Label>
               <div className="flex items-start gap-4">
@@ -311,6 +312,7 @@ const AdminEvents = () => {
           </form>
         </DialogContent>
       </Dialog>
+
 
       {isLoading ? (
         <div className="text-center py-20 text-muted-foreground font-body flex flex-col items-center gap-4">
@@ -369,6 +371,7 @@ const AdminEvents = () => {
                         </p>
                       </div>
 
+
                       <div className="flex items-center gap-1.5 flex-shrink-0">
                         {event.status === "DRAFT" && event.authorId === user?.id && (
                           <Button variant="outline" size="sm" className="h-8 rounded-lg text-[10px] px-3 font-bold uppercase tracking-tight" onClick={() => submitMutation.mutate(event.id)}>SUBMIT</Button>
@@ -411,6 +414,7 @@ const AdminEvents = () => {
                         <a href={event.externalLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors font-medium"><ExternalLink className="w-3.5 h-3.5" />Link</a>
                       )}
                     </div>
+
 
                     {event.status === "REJECTED" && event.rejectionReason && (
                       <div className="mt-3 flex items-start gap-2 bg-rose/5 p-2.5 rounded-xl border border-rose/10">

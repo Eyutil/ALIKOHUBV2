@@ -3,8 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LayoutDashboard, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import logoProfessional from "@/assets/logo-professional.png";
-import logoSocial from "@/assets/logo-social.png";
+import logoMain from "@/assets/Aliko Events I - tbg (H).png";
 
 interface NavItem {
   label: string;
@@ -34,12 +33,12 @@ const Navbar = ({ portal }: NavbarProps) => {
   const { user, isAdmin, isContentManager, signOut } = useAuth();
   const location = useLocation();
   const links = portal === "professional" ? professionalLinks : socialLinks;
-  const logo = portal === "professional" ? logoProfessional : logoSocial;
+  const logo = logoMain;
   const ctaText = portal === "professional" ? "Request Proposal" : "Book Consultation";
   const ctaHref = portal === "professional" ? "/professional/request-proposal" : "/social/book-consultation";
 
   return (
-    <nav className="sticky top-0 z-40 bg-primary border-b border-primary/80 shadow-md">
+    <nav className="sticky top-0 z-40 bg-[#2d7653] border-b border-white/10 shadow-md">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to={`/${portal}`} className="flex items-center gap-2">
           <img src={logo} alt={`Aliko Events ${portal}`} className="h-9 w-auto" />
@@ -84,7 +83,7 @@ const Navbar = ({ portal }: NavbarProps) => {
             </Button>
           ) : (
             <Link to={`/${portal}/signin`}>
-              <Button variant="ghost" size="sm" className="font-body text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+              <Button variant="ghost" size="sm" className="font-body text-black hover:bg-primary-foreground/10 hover:text-black">
                 Sign In
               </Button>
             </Link>
@@ -145,7 +144,7 @@ const Navbar = ({ portal }: NavbarProps) => {
               </Button>
             ) : (
               <Link to={`/${portal}/signin`}>
-                <Button variant="outline" size="sm" className="w-full font-body border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                <Button variant="outline" size="sm" className="w-full font-body border-primary-foreground/30 text-black hover:bg-primary-foreground/10">
                   Sign In
                 </Button>
               </Link>

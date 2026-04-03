@@ -6,7 +6,9 @@ import { Label } from "@/components/ui/label";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
-import { Eye, EyeOff, Mail, Lock, Sparkles } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+
+import logo from "@/assets/Aliko Events I - tbg (H).png";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -91,22 +93,14 @@ const SignIn = () => {
       >
         {/* Logo & Header */}
         <motion.div
-          className="text-center mb-8"
+          className="text-center pt-6 mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <Link to="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-primary" />
-            </div>
-            <span className="text-2xl font-bold text-primary-foreground font-display tracking-wide">
-              Aliko Events
-            </span>
+          <Link to="/" className="inline-block">
+            <img src={logo} alt="Aliko Events" className="h-14 w-auto mx-auto object-contain" />
           </Link>
-          <p className="text-primary-foreground/70 font-body mt-3 text-sm">
-            Welcome back — sign in to manage your events
-          </p>
         </motion.div>
 
         {/* Sign-in card */}
